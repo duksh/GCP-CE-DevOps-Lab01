@@ -2,12 +2,13 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . /app
-
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
+COPY . .
 
-ENV NAME World
+EXPOSE 5555
+
+ENV NAME=World
 
 CMD ["python", "app.py"]
